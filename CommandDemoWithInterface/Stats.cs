@@ -6,8 +6,19 @@
         private int _sum;
         private int _max;
         private int _min;
+        public float Mean => (float)_sum / Count;
+        public string Description => Format("Antall tall", Count) +
+                                     Format("Sum", _sum) +
+                                     Format("Max", _max) +
+                                     Format("Min", _min) +
+                                     Format("Gjennomsnitt", Mean);
 
         public Stats()
+        {
+            Reset();
+        }
+
+        public void Reset()
         {
             Count = 0;
             _sum = 0;
@@ -23,36 +34,24 @@
             _sum += number;
         }
 
-        public float GetAvg()
-        {
-            return (float)_sum / Count;
-        }
-
-        public string GetDescription()
-        {
-            var avg = GetAvg();
-            return
-                Format("Antall tall", Count) +
-                Format("Sum", _sum) +
-                Format("Max", _max) +
-                Format("Min", _min) +
-                Format("Gjennomsnitt", avg);
-        }
-
         private static string Format(string label, float number)
-        {
-            return label.PadRight(12, ' ')
-                   + ": "
-                   + number.ToString("####.##")
-                   + '\n';
-        }
+            => Format(label, number.ToString("####.##"));
 
         private static string Format(string label, int number)
+            => Format(label, number.ToString("####"));
+
+        private static string Format(string label, string number)
         {
             return label.PadRight(12, ' ')
                    + ": "
-                   + number.ToString("####")
+                   + number
                    + '\n';
+        }
+
+        public void Remove(int number)
+        {
+            Count--;
+            _sum -= number;
         }
     }
 }

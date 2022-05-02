@@ -1,29 +1,34 @@
-﻿using CommandDemoWithInterface.Demo1Interface;
+﻿using CommandDemoWithInterface;
+using CommandDemoWithInterface.Demo1Interface;
+using CommandDemoWithInterface.Demo2Commands;
 
-// Pause til 10:30
+//Demo.Run();
 
-var toilets = new IFlushable[]
+var stats = new Stats();
+while (true)
 {
-    new WaterCloset(), 
-    new BurningToilet(),
-    new ChemicalToilet()
-};
+    var commands = new ICommand[]
+    {
+        new AddNumberCommand(stats),
+        new ShowDescriptionCommand(stats),
+        new ResetCommand(stats), 
+        new RemoveNumberCommand(stats)
+    };
 
-foreach (var t in toilets)
-{
-    t.Flush();
+    Console.WriteLine("Meny: ");
+    foreach (var command in commands)
+    {
+        Console.WriteLine( $"{command.Name} => {command.MenuText}");
+    }
+    Console.Write("Hva vil du gjøre? ");
+    var cmdName = Console.ReadLine();
+
+    //ICommand cmd = null;
+    //foreach (var command in commands)
+    //{
+    //    if (command.Name == cmdName) cmd = command;
+    //}
+
+    var cmd = commands.FirstOrDefault(c => c.Name == cmdName);
+    cmd?.Run();
 }
-
-
-//var stats = new Stats();
-//while (true)
-//{
-//    Console.Write("Skriv tall: ");
-//    var numberStr = Console.ReadLine();
-//    var number = Convert.ToInt32(numberStr);
-//    stats.Add(number);
-//    Console.WriteLine(stats.GetDescription());
-
-//    Console.WriteLine(stats.Count);
-//    //stats.Count = 17;
-//}
