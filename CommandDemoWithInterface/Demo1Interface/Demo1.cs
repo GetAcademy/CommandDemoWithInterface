@@ -1,6 +1,6 @@
 ﻿namespace CommandDemoWithInterface.Demo1Interface
 {
-    internal class Demo
+    internal class Demo1
     {
         public static void Run()
         {

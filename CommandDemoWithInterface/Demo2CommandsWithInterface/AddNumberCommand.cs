@@ -1,12 +1,12 @@
-﻿namespace CommandDemoWithInterface.Demo2Commands
+﻿namespace CommandDemoWithInterface.Demo2CommandsWithInterface
 {
-    internal class RemoveNumberCommand : ICommand
+    internal class AddNumberCommand : ICommand
     {
         private readonly Stats _stats;
-        public string Name => "remove";
-        public string MenuText => "fjerne tall";
+        public string Name => "add";
+        public string MenuText => "legge til tall";
 
-        public RemoveNumberCommand(Stats stats)
+        public AddNumberCommand(Stats stats)
         {
             _stats = stats;
         }
@@ -16,7 +16,7 @@
             Console.Write("Skriv tall: ");
             var numberStr = Console.ReadLine();
             var number = Convert.ToInt32(numberStr);
-            _stats.Remove(number);
+            _stats.Add(number);
         }
     }
 }

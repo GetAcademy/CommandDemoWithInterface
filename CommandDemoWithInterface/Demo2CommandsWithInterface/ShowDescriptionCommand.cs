@@ -1,4 +1,4 @@
-﻿namespace CommandDemoWithInterface.Demo2Commands
+﻿namespace CommandDemoWithInterface.Demo2CommandsWithInterface
 {
     internal class ShowDescriptionCommand : ICommand
     {
