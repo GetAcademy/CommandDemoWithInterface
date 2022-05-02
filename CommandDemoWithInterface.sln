@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDemoWithInterface", "CommandDemoWithInterface\CommandDemoWithInterface.csproj", "{5F3BD8EB-E363-4D13-A03E-6E2BD8B3341D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F3BD8EB-E363-4D13-A03E-6E2BD8B3341D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3BD8EB-E363-4D13-A03E-6E2BD8B3341D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3BD8EB-E363-4D13-A03E-6E2BD8B3341D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3BD8EB-E363-4D13-A03E-6E2BD8B3341D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79589FF7-F2E1-4219-81F2-9D0BBD2D6B55}
+	EndGlobalSection
+EndGlobal
